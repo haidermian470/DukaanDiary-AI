@@ -127,8 +127,7 @@ export function createApiClient({
     } catch (error) {
       if (!(error instanceof ApiError) || error.status !== 401 || !auth) throw error
       if (refreshSession) {
-        let refreshed = false
-        try { refreshed = await refreshSession() } catch { refreshed = false }
+        const refreshed = await Promise.resolve().then(refreshSession).catch(() => false)
         if (refreshed) {
           try { return await run() } catch (retryError) {
             if (retryError instanceof ApiError && retryError.status === 401) onAuthError?.(retryError)

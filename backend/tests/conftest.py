@@ -65,21 +65,27 @@ def database_url():
 
 def _configure_env(database_url: str | None):
     os.environ.update({
-        "APP_ENV": "test", "SUPABASE_JWT_SECRET": TEST_JWT_SECRET, "SUPABASE_URL": TEST_SUPABASE_URL,
-        "FRONTEND_ORIGINS": "http://localhost:5173", "LOG_LEVEL": "WARNING", "DEV_AUTH_BYPASS": "false",
-        "AI_RATE_LIMIT_PER_MINUTE": "1000", "MAX_UPLOAD_SIZE_MB": "1",
+        "APP_ENV": "test",
+        "SUPABASE_JWT_SECRET": TEST_JWT_SECRET,
+        "SUPABASE_URL": TEST_SUPABASE_URL,
+        "FRONTEND_ORIGINS": "http://localhost:5173",
+        "LOG_LEVEL": "WARNING",
+        "DEV_AUTH_BYPASS": "false",
+        "AI_RATE_LIMIT_PER_MINUTE": "1000",
+        "MAX_UPLOAD_SIZE_MB": "1",
+        "GEMINI_API_KEY": "",
+        "DATABASE_URL": database_url or "",
     })
-    os.environ.pop("GEMINI_API_KEY", None)
-    if database_url:
-        os.environ["DATABASE_URL"] = database_url
-    else:
-        os.environ.pop("DATABASE_URL", None)
+
+    os.environ.pop("GEMINI_MODEL", None)
+    os.environ.pop("GEMINI_TIMEOUT_SECONDS", None)
+
     from app.core.config import get_settings
     from app.database import session
+
     get_settings.cache_clear()
     session.get_engine.cache_clear()
     session._session_factory.cache_clear()
-
 
 class FakeAI:
     """Stands in for Gemini. Queue answers with .add_json(obj) / .add_text(str) / .add_error(exc)."""

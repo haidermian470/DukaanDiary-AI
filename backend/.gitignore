@@ -1,0 +1,4 @@
+# Backend-only ignores (the repository root .gitignore already covers .env and venv/)
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,7 @@
+# Development and testing extras (not needed on Render)
+-r requirements.txt
+pytest==9.1.1
+# Starts a throwaway local PostgreSQL for the test suite (no Docker needed).
+pgserver==0.1.4
+# Draws the synthetic demo payment screenshots (scripts/make_demo_screenshots.py).
+pillow==12.3.0

@@ -1,8 +1,14 @@
-fastapi
-uvicorn[standard]
-python-dotenv
-supabase
-google-genai
-pydantic
-pytest
-httpx
+# DukaanDiary AI backend - production dependencies (Python 3.12)
+fastapi==0.143.0
+uvicorn[standard]==0.54.0
+pydantic==2.14.0
+pydantic-settings==2.15.0
+python-dotenv==1.2.4
+python-multipart==0.0.32
+SQLAlchemy==2.1.4
+psycopg[binary]==3.3.6
+PyJWT[crypto]==2.15.1
+cryptography==50.0.2
+google-genai==2.29.0
+httpx==0.28.1
+tzdata==2026.5

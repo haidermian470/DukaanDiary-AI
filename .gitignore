@@ -1,0 +1,24 @@
+# React and Node.js
+node_modules/
+frontend/dist/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environments
+venv/
+.venv/
+backend/venv/
+backend/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

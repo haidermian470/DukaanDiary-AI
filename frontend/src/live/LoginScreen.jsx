@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { LogIn, Store, UserPlus } from 'lucide-react'
+import { LogIn, UserPlus } from 'lucide-react'
+import BrandLogo from '../components/layout/BrandLogo'
 import FormField from '../components/ui/FormField'
 import { useLive } from './context.js'
 
@@ -33,7 +34,7 @@ export default function LoginScreen() {
 
   return <main id="main" tabIndex={-1} className="auth-page">
     <section className="auth-card" aria-labelledby="auth-title">
-      <div className="brand auth-brand"><span className="brand-mark"><Store size={23} /></span><span><strong>DukaanDiary AI <small>PK</small></strong><span className="brand-subtitle">Hisab-kitab for your dukaan</span></span></div>
+      <div className="auth-brand"><BrandLogo className="auth-logo" /><span className="brand-subtitle">Hisab-kitab for your dukaan</span></div>
       <h1 id="auth-title">{mode === 'signin' ? 'Sign in' : 'Create account'}</h1>
       <p className="subtitle">{mode === 'signin' ? 'Use your shop account to see your own records.' : 'Your shop is created automatically after you sign in.'}</p>
       {authNotice && <p role="status" className="warning-message">{authNotice}</p>}

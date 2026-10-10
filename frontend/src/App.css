@@ -289,3 +289,16 @@ textarea { width: 100%; resize: vertical; border: 1px solid var(--border); borde
 }
 .analytics-totals strong.text-red { color: var(--red); }
 .analytics-totals strong small { font-size: 13px; font-weight: 600; }
+
+/* Brand logo (image includes the icon and the DukaanDiary wordmark) */
+.brand { gap: 14px; }
+.brand-logo { display: block; height: 44px; width: auto; flex-shrink: 0; }
+.brand-subtitle { padding-left: 14px; border-left: 1px solid var(--border); }
+.auth-brand { display: grid; gap: 6px; justify-items: start; margin-bottom: 8px; }
+.auth-logo { display: block; height: 64px; width: auto; }
+@media (max-width: 700px) {
+  .brand { gap: 10px; }
+  .brand-logo { height: 34px; }
+  .brand-subtitle { padding-left: 10px; }
+}
+.auth-brand .brand-subtitle { border-left: 0; padding-left: 0; max-width: none; }

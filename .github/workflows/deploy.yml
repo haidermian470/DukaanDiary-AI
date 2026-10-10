@@ -1,10 +1,9 @@
 
-name: Deploy DukaanDiary AI to GitHub Pages
+name: Deploy Frontend to GitHub Pages
 
 on:
   push:
-    branches:
-      - frontend-dev
+    branches: [frontend-dev]
   workflow_dispatch:
 
 permissions:
@@ -19,43 +18,27 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install frontend dependencies
+      - name: Install dependencies
         working-directory: frontend
         run: npm install
-
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
 
       - name: Build frontend in demo mode
         working-directory: frontend
         run: npm run build
         env:
           VITE_APP_MODE: demo
-          VITE_BASE_PATH: /DukaanDiary-AI/
 
-      - name: Upload frontend build
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: frontend/dist
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4

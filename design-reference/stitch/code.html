@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary": "#4b41e1", "tertiary": "#a7000f", "tertiary-container": "#cf1b1e", "primary-fixed": "#97f5cc", "secondary-container": "#645efb", "on-tertiary-container": "#ffe4e0", "on-surface-variant": "#3e4943", "outline-variant": "#bdc9c1", "on-secondary-fixed-variant": "#3323cc", "tertiary-fixed-dim": "#ffb4ab", "on-primary": "#ffffff", "on-secondary": "#ffffff", "inverse-surface": "#283044", "on-primary-container": "#9ffdd3", "primary": "#005d42", "surface-container": "#eaedff", "surface": "#faf8ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-primary-fixed": "#002115", "surface-container-high": "#e2e7ff", "surface-dim": "#d2d9f4", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#00513a", "surface-container-low": "#f2f3ff", "on-secondary-container": "#fffbff", "on-secondary-fixed": "#0f0069", "primary-fixed-dim": "#7bd8b1", "on-background": "#131b2e", "secondary-fixed-dim": "#c3c0ff", "inverse-primary": "#7bd8b1", "surface-variant": "#dae2fd", "outline": "#6e7a73", "surface-bright": "#faf8ff", "inverse-on-surface": "#eef0ff", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#93000b", "error-container": "#ffdad6", "surface-tint": "#006c4e", "background": "#faf8ff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "on-error": "#ffffff", "primary-container": "#047857", "on-tertiary-fixed": "#410002", "secondary-fixed": "#e2dfff", "tertiary-fixed": "#ffdad6" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "1rem", "space-xs": "0.25rem", "space-md": "1rem", "margin-desktop": "2rem", "space-lg": "1.25rem", "margin-tablet": "1.5rem", "space-xl": "1.75rem", "gutter-mobile": "0.75rem", "space-sm": "0.5rem", "gutter": "1rem" }, fontFamily: { "label-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "currency-card": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, fontSize: { "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }], "title-md": ["16px", { lineHeight: "22px", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "title-lg": ["18px", { lineHeight: "24px", fontWeight: "600" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }], "headline-xl": ["36px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg": ["30px", { lineHeight: "38px", letterSpacing: "-0.01em", fontWeight: "700" }], "currency-display": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "currency-card": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-xl-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "headline-lg-mobile": ["24px", { lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><img alt="DukaanDiary AI Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiKvKfojbRH5mniCIMY5gegYjAeZPb-TO7LjYEAXsRgiAY7PVe8ktAHdcLdyNzB99NzRRtGcjXYhdQMiU5JsIdz7BEEEr4pexgblWnzsAEbwMAFo1HKYLChqAcjUvGst5rPQJ45TuFXCHL1Mk9PogIdr6ETN8SPlhgMCybtd5FHYLCdZeIZ3K4JrP9W8zmyDj-m7bImyAbxm0gLmyI5VTdqdb3mLThQHKy4gHMdY_j6JUt1eX3qeS1"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-title-md text-title-md text-on-surface font-bold truncate">DukaanDiary AI</span><span class="px-1.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm leading-none">PK</span></div><span class="font-body-sm text-body-sm text-on-surface-variant truncate">Bismillah Kirayana Store • Karachi</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Notifications" class="relative w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-4 h-4 bg-tertiary-container text-on-tertiary rounded-full font-label-sm text-[10px] leading-tight flex items-center justify-center font-bold">2</span></button><div class="relative flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary-fixed-dim" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwSQggmIyGydDWkgyX9IwXUyNNsqVymF40k2MjSBbeth5KY4hy97DySQJaUvakchyhm9YrTJmw5rm1wcuqGbzWmTxedBKX-gFFxRJI__7615YiyQWtuOvoWCJD8oaPmCu-nF8vvyA2kHLALAyk3oigOtjoIFmM7SH8F7hLncJQZUSxxAvEj3JY5hnHzwZSugVQKltFf-kAay1F5MPLYv46KxrXTB_BLTbVjaiBli4P9gHz_2QnM4NL"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-container rounded-full ring-2 ring-surface-container-lowest"></span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-margin pb-10 space-y-space-lg">
+<!-- Live Demo Badge & Greeting Header -->
+<div class="pt-space-sm flex flex-col space-y-space-sm">
+<div class="inline-flex items-center self-start gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>AICON 2026 Live Demo Edition • Demo data active</span>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
+          Assalam-o-Alaikum, Ahmed bhai! 👋
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary">storefront</span>
+<span>Bismillah Kirayana Store • Gulshan Block 13-D</span>
+</p>
+</div>
+<div class="flex items-center gap-1 bg-surface-container px-2 py-1.5 rounded-xl text-on-surface font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Online</span>
+</div>
+</div>
+<!-- Date Filter Pills -->
+<div class="flex items-center gap-2 overflow-x-auto py-1 no-scrollbar -mx-margin px-margin">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95">
+        Today (Aaj)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors active:bg-surface-variant">
+        This Week
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors active:bg-surface-variant">
+        This Month (March 2026)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1">
+<span>Custom</span>
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+</button>
+</div>
+</div>
+<!-- Quick Action Grid (Tactile Touch Targets >= 48px) -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Record Sale -->
+<button class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md active:scale-[0.98] transition-all text-left">
+<div class="w-11 h-11 rounded-xl bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-lg text-label-lg text-on-surface truncate">Record Sale</span>
+<span class="block font-label-sm text-label-sm text-primary font-bold">فروخت اندراج</span>
+</div>
+</button>
+<!-- Record Expense -->
+<button class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md active:scale-[0.98] transition-all text-left">
+<div class="w-11 h-11 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">trending_down</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-lg text-label-lg text-on-surface truncate">Record Expense</span>
+<span class="block font-label-sm text-label-sm text-tertiary font-bold">خرچہ اندراج</span>
+</div>
+</button>
+<!-- Check Screenshot AI Tasdeeq -->
+<button class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md active:scale-[0.98] transition-all text-left">
+<div class="w-11 h-11 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg text-on-surface truncate">AI Tasdeeq</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">auto_awesome</span>
+</div>
+<span class="block font-label-sm text-label-sm text-secondary font-bold">تصدیق ثبوت</span>
+</div>
+</button>
+<!-- Voice Khata -->
+<button class="flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md active:scale-[0.98] transition-all text-left">
+<div class="w-11 h-11 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">mic</span>
+</div>
+<div class="min-w-0">
+<span class="block font-label-lg text-label-lg text-on-surface truncate">Voice Khata</span>
+<span class="block font-label-sm text-label-sm text-on-surface-variant font-bold">آواز سے انٹری</span>
+</div>
+</button>
+</div>
+<!-- Key Financial Metrics (2-column mobile layout, separation of revenue vs cash) -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<h2 class="font-title-md text-title-md text-on-surface">Hisab-Kitab Summary</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Real-time sync</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Card 1: Total Sales -->
+<div class="col-span-1 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Sales (مجموعی)</span>
+<span class="p-1 rounded bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+</span>
+</div>
+<div class="mt-2 font-currency-card text-currency-card text-primary font-bold tracking-tight">
+            PKR 48,250
+          </div>
+</div>
+<div class="mt-2 flex items-center gap-1 font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+<span>+12% vs kal (38 sales)</span>
+</div>
+</div>
+<!-- Card 2: Cash Received -->
+<div class="col-span-1 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cash Received (روکڑ)</span>
+<span class="p-1 rounded bg-surface-container-high text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">payments</span>
+</span>
+</div>
+<div class="mt-2 font-currency-card text-currency-card text-on-surface font-bold tracking-tight">
+            PKR 41,200
+          </div>
+</div>
+<div class="mt-2 font-body-sm text-body-sm text-on-surface-variant truncate">
+          Cash + Digital Rokad
+        </div>
+</div>
+<!-- Card 3: Operating Expenses -->
+<div class="col-span-1 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Expenses (اخراجات)</span>
+<span class="p-1 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">outbox</span>
+</span>
+</div>
+<div class="mt-2 font-currency-card text-currency-card text-tertiary font-bold tracking-tight">
+            PKR 6,450
+          </div>
+</div>
+<div class="mt-2 font-body-sm text-body-sm text-on-surface-variant truncate">
+          Bijli, van &amp; helper
+        </div>
+</div>
+<!-- Card 4: Customer Udhaar -->
+<div class="col-span-1 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Udhaar (واجبات)</span>
+<span class="p-1 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">assignment_ind</span>
+</span>
+</div>
+<div class="mt-2 font-currency-card text-currency-card text-tertiary font-bold tracking-tight">
+            PKR 34,800
+          </div>
+</div>
+<div class="mt-2 font-body-sm text-body-sm text-on-surface-variant">
+          14 customers owing
+        </div>
+</div>
+<!-- Card 5: Supplier Payables (Full width banner inside grid) -->
+<div class="col-span-2 p-3.5 rounded-xl bg-surface-container-low shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">local_shipping</span>
+</div>
+<div>
+<span class="block font-label-md text-label-md text-on-surface">Supplier Payables (ادھار سپلائر)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Next due payment in 4 days</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-title-lg text-title-lg font-bold text-on-surface">PKR 19,500</div>
+<span class="font-label-sm text-label-sm text-secondary">3 Distributors</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Chart Section: Daily Sales vs Expenses -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Daily Sales vs Expenses</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Past 7 days performance</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Sale</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Kharcha</span>
+</div>
+</div>
+</div>
+<!-- Chart Visualization (SVG) -->
+<div class="relative pt-4 pb-2">
+<!-- Tooltip highlight for Friday -->
+<div class="absolute top-0 right-14 bg-on-surface text-surface px-2.5 py-1 rounded-md shadow-md flex items-center gap-1 z-10 pointer-events-none">
+<span class="font-label-sm text-label-sm font-bold">Jummah: PKR 58,000 (Peak)</span>
+</div>
+<svg class="w-full h-36 overflow-visible" preserveaspectratio="none" viewbox="0 0 320 130">
+<!-- Grid horizontal lines -->
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#E2E8F0" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="65" y2="65"></line>
+<line stroke="#CBD5E1" stroke-width="1" x1="0" x2="320" y1="110" y2="110"></line>
+<!-- 7 Days Bar Groups: Sat, Sun, Mon, Tue, Wed, Thu, Fri -->
+<!-- Sat -->
+<rect fill="#047857" height="55" rx="3" width="10" x="12" y="55"></rect>
+<rect fill="#cf1b1e" height="15" opacity="0.8" rx="2" width="8" x="24" y="95"></rect>
+<!-- Sun -->
+<rect fill="#047857" height="65" rx="3" width="10" x="56" y="45"></rect>
+<rect fill="#cf1b1e" height="20" opacity="0.8" rx="2" width="8" x="68" y="90"></rect>
+<!-- Mon -->
+<rect fill="#047857" height="50" rx="3" width="10" x="100" y="60"></rect>
+<rect fill="#cf1b1e" height="10" opacity="0.8" rx="2" width="8" x="112" y="100"></rect>
+<!-- Tue -->
+<rect fill="#047857" height="60" rx="3" width="10" x="144" y="50"></rect>
+<rect fill="#cf1b1e" height="22" opacity="0.8" rx="2" width="8" x="156" y="88"></rect>
+<!-- Wed -->
+<rect fill="#047857" height="70" rx="3" width="10" x="188" y="40"></rect>
+<rect fill="#cf1b1e" height="25" opacity="0.8" rx="2" width="8" x="200" y="85"></rect>
+<!-- Thu -->
+<rect fill="#047857" height="75" rx="3" width="10" x="232" y="35"></rect>
+<rect fill="#cf1b1e" height="18" opacity="0.8" rx="2" width="8" x="244" y="92"></rect>
+<!-- Fri (Peak) with soft halo highlight -->
+<rect fill="#645efb" height="97" opacity="0.15" rx="3" width="14" x="274" y="15"></rect>
+<rect fill="#047857" height="90" rx="3" width="10" x="276" y="20"></rect>
+<rect fill="#cf1b1e" height="15" opacity="0.8" rx="2" width="8" x="288" y="95"></rect>
+</svg>
+<!-- Day labels -->
+<div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm px-2 pt-1">
+<span>Sat</span>
+<span>Sun</span>
+<span>Mon</span>
+<span>Tue</span>
+<span>Wed</span>
+<span>Thu</span>
+<span class="text-primary font-bold">Fri ⭐</span>
+</div>
+</div>
+</div>
+<!-- AI Smart Insight Card (Munshi AI Aura) -->
+<div class="relative overflow-hidden p-space-md rounded-xl bg-gradient-to-br from-surface-container via-surface-container-low to-surface shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">smart_toy</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-bold">AI Munshi Insight</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary text-on-secondary font-label-sm text-[10px]">SMART</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-relaxed">
+          Transport expense jumped <strong class="text-tertiary">35% this week</strong> (PKR 3,200 extra) due to Sabzi Mandi rickshaw fares. Also, <strong>2 regular customers</strong> have overdue udhaar &gt; 15 days.
+        </p>
+<button class="mt-3 w-full py-2.5 px-3 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-2 active:bg-secondary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">mark_email_read</span>
+<span>Review Insights &amp; Send Reminders</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Urgent Attention Khata Balances (Udhaar & Payables) -->
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface">Urgent Follow-ups</h3>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-tertiary font-label-sm text-label-sm font-bold">2 Pending</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold flex items-center gap-0.5" href="#">
+<span>View Khata</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</a>
+</div>
+<!-- Customer 1: Tariq Mehmood (Overdue Udhaar) -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center font-title-md text-title-md font-bold flex-shrink-0">
+          TM
+        </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Tariq Mehmood</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-fixed text-tertiary font-label-sm text-[10px]">18d Overdue</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate block">Last payment 22 Feb • Gulshan Block 13</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-title-md text-title-md text-tertiary font-bold">PKR 4,800</span>
+<button class="mt-1 px-2.5 py-1 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm flex items-center gap-1 active:bg-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">chat</span>
+<span>WhatsApp Tagaza</span>
+</button>
+</div>
+</div>
+<!-- Supplier 2: Rashid Kirayana Wholesale -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-title-md text-title-md font-bold flex-shrink-0">
+          RW
+        </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface truncate">Rashid Wholesale</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">Supplier</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate block">Jodia Bazaar • Invoice #4912</span>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-title-md text-title-md text-on-surface font-bold">PKR 12,000</span>
+<span class="font-label-sm text-label-sm text-tertiary mt-1">Due Tomorrow</span>
+</div>
+</div>
+</div>
+<!-- Recent Ledger Feed (Rokad & Transactions) -->
+<div class="space-y-space-sm pt-2">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface">Today's Rokad Feed</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Live updates</span>
+</div>
+<div class="flex flex-col space-y-2">
+<!-- Item 1: Cash Sale -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+</div>
+<div class="min-w-0">
+<span class="block font-title-md text-title-md text-on-surface truncate">10kg Atta &amp; Cooking Oil</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">03:45 PM • Cash • Counter counter</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="block font-title-md text-title-md text-primary font-bold">+ PKR 3,850</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] text-primary">
+<span class="material-symbols-outlined text-[12px]">check_circle</span> Complete
+          </span>
+</div>
+</div>
+<!-- Item 2: Easypaisa Khata Tasdeeq -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Ali Raza (Khata Payment)</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">verified</span>
+</div>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">02:18 PM • EasyPaisa • Trx #88219</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="block font-title-md text-title-md text-primary font-bold">+ PKR 2,000</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[10px]">
+            AI Verified
+          </span>
+</div>
+</div>
+<!-- Item 3: Dukan Bijli Bill (Expense) -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="min-w-0">
+<span class="block font-title-md text-title-md text-on-surface truncate">Dukan Bijli Bill (K-Electric)</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">12:30 PM • Paid Cash • Expense</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="block font-title-md text-title-md text-tertiary font-bold">- PKR 4,200</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Paid</span>
+</div>
+</div>
+<!-- Item 4: Udhaar Given -->
+<div class="p-3.5 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">assignment_late</span>
+</div>
+<div class="min-w-0">
+<span class="block font-title-md text-title-md text-on-surface truncate">Bashir Ahmed (Udhaar)</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant">11:15 AM • 2x Ghee Pouches</span>
+</div>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="block font-title-md text-title-md text-on-surface font-bold">PKR 1,450</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[10px]">
+            Unpaid Udhaar
+          </span>
+</div>
+</div>
+</div>
+<!-- View All Transactions Anchor -->
+<a class="w-full py-3 mt-2 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-1.5 active:bg-surface-variant transition-colors" href="#">
+<span>View All 38 Transactions Today</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<script>
+  // Simple micro-interaction: smooth date selector pill toggle
+  document.querySelectorAll('.no-scrollbar button').forEach(button => {
+    button.addEventListener('click', function() {
+      document.querySelectorAll('.no-scrollbar button').forEach(b => {
+        b.className = 'flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md transition-colors active:bg-surface-variant';
+      });
+      this.className = 'flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-transform active:scale-95';
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.06)]" data-active-classes="text-primary font-bold"><div class="relative flex items-center justify-around h-16 px-space-xs max-w-md mx-auto"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] h-12 transition-colors gap-0.5 text-primary font-bold" data-path="overview" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-label-sm">Overview</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="transactions" href="#"><span class="material-symbols-outlined text-[22px]">menu_book</span><span class="font-label-sm text-label-sm">Rokad</span></a><div class="relative -top-5 flex flex-col items-center justify-center"><a class="w-13 h-13 w-[52px] h-[52px] rounded-full bg-gradient-to-tr from-primary-container via-secondary to-secondary-container text-on-primary flex items-center justify-center shadow-[0_8px_20px_-4px_rgba(99,102,241,0.4)] active:scale-95 transition-transform ring-4 ring-surface-container-lowest" data-path="ai-action" href="#"><span class="material-symbols-outlined text-[26px]">mic</span></a><span class="font-label-sm text-label-sm text-secondary font-bold mt-1">AI Quick</span></div><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="khata-credit" href="#"><span class="material-symbols-outlined text-[22px]">handshake</span><span class="font-label-sm text-label-sm">Khata</span></a><a class="flex flex-col items-center justify-center min-w-[56px] h-12 text-on-surface-variant hover:text-on-surface transition-colors gap-0.5" data-path="ai-checker" href="#"><span class="material-symbols-outlined text-[22px]">verified_user</span><span class="font-label-sm text-label-sm">Tasdeeq</span></a></div></nav></body></html>

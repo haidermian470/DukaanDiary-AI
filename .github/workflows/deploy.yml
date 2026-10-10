@@ -34,6 +34,7 @@ jobs:
         run: npm run build
         env:
           VITE_APP_MODE: demo
+          GITHUB_PAGES: 'true'
 
       - uses: actions/configure-pages@v5
 

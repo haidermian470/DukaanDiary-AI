@@ -311,7 +311,7 @@ export function transactionUpdateBody(original, form) {
   const amount = toMinor(form.amount)
   if (amount === null) throw new Error('Amounts must be validated before saving.')
   if (form.description.trim() !== original.description) body.description = form.description.trim()
-  if ((nullable(form.category) ?? '') !== (original.category ?? '')) body.category = nullable(form.category)
+  if ((nullable(form.category) ?? '').toLowerCase() !== (original.category ?? '').toLowerCase()) body.category = nullable(form.category)
   if ((nullable(form.notes) ?? '') !== (original.notes ?? '')) body.notes = nullable(form.notes)
   if (amount !== original.amount) body.amount = toDecimalString(amount)
   if (form.date !== original.date) body.transaction_date = form.date
@@ -321,6 +321,15 @@ export function transactionUpdateBody(original, form) {
     else body.contact_name = nullable(form.party)
   }
   return body
+}
+
+/** Merge draft values over a blank form. Empty draft fields keep the defaults, except the
+ * paid amount: an unknown payment stays empty so the user must enter it. */
+export function mergeDraft(blank, draft) {
+  const values = transactionFormValues(draft)
+  const merged = { ...blank }
+  for (const [key, value] of Object.entries(values)) if (value !== '' || key === 'paid') merged[key] = value
+  return merged
 }
 
 /** Turn an API transaction (or AI/receipt draft) into transaction form values. */

@@ -1,8 +1,9 @@
+
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
+// Use the correct asset path for each deployment
 export default defineConfig({
   plugins: [react()],
-  base: '/DukaanDiary-AI/',
+  base: process.env.VERCEL ? '/' : '/DukaanDiary-AI/',
 })
